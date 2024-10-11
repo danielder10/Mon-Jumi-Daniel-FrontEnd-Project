@@ -1,22 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
 }
 
-header {
-  background-color: #ff6347;
-  padding: 1rem;
-  color: white;
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
+.App {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+
 }
 
-nav ul li {
-  margin: 0 1rem;
+.header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  z-index: 10;
+}
+
+.logo {
+  margin: 0;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-item a:hover {
+  color: #FFC107;
 }
 
 .recipe-list {

@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css'; 
 
 function MyRecipes({ myRecipes, removeRecipeFromMyRecipes }) {
   return (
@@ -10,10 +11,14 @@ function MyRecipes({ myRecipes, removeRecipeFromMyRecipes }) {
         <div className="recipe-list">
           {myRecipes.map((recipe, index) => (
             <div key={index} className="recipe-item">
-              <img src={recipe.img} alt={recipe.title} />
+              <img 
+                src={recipe.img} 
+                alt={recipe.title} 
+                style={{ width: '300px', height: '200px' }}
+              />
               <h3>{recipe.title}</h3>
-              <p>{recipe.description}</p>
               <button onClick={() => removeRecipeFromMyRecipes(index)}>Remove</button>
+              <p>{recipe.description}</p>
             </div>
           ))}
         </div>
