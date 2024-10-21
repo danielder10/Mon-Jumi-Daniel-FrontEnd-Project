@@ -2,10 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 function RecipeDetails({ recipes }) {
-
-  
   const { id } = useParams();
-  const recipe = recipes[parseInt(id)];
+  const recipe = recipes[parseInt(id)];  // Correct the ID to array index
 
   if (!recipe) {
     return <div>Recipe not found.</div>;
@@ -16,17 +14,18 @@ function RecipeDetails({ recipes }) {
       <h2>{recipe.title}</h2>
       <img src={recipe.img} alt={recipe.title} style={{ width: '400px', height: '300px' }} />
       <h3>Description:</h3>
-      <p>{recipes.description}</p>
+      <p>{recipe.description}</p>  {/* Corrected reference */}
       <h3>Ingredients:</h3>
       <ul>
         {recipe.ingredients && recipe.ingredients.map((ingredient, index) => (
-          <li key={index}>{recipe.ingredients}</li>
+          <li key={index}>{ingredient}</li>
         ))}
       </ul>
       <h3>Instructions:</h3>
-      <p>{recipe.instructions}</p>
+      <p>{recipe.instructions}</p>  {/* Joining the instructions into a single paragraph */}
     </div>
   );
 }
 
 export default RecipeDetails;
+

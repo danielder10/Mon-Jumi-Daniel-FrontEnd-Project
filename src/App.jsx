@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Header';
-import Home from './Home';
+import Home, { recipes } from './Home';
 import Categories from './Categories';
 import MyRecipes from './MyRecipes';
 import Footer from './Footer';
@@ -30,7 +30,7 @@ function App() {
             path="/my-recipes"
             element={<MyRecipes myRecipes={myRecipes} removeRecipeFromMyRecipes={removeRecipeFromMyRecipes} />}
           />
-          <Route path="/recipe/:id" element={<RecipesDetails recipes={myRecipes} />} />
+          <Route path="/recipe/:id" element={<RecipesDetails recipes={recipes} />} />
         </Routes>
         <Footer />
       </div>

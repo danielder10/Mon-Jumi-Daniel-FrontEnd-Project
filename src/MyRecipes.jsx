@@ -19,9 +19,6 @@ function MyRecipes({ myRecipes, removeRecipeFromMyRecipes }) {
               <h3>{recipe.title}</h3>
               <button onClick={() => removeRecipeFromMyRecipes(index)}>Remove</button>
               <p>{recipe.description}</p>
-              <Link to={`/recipe/${index}`}>
-                <button>View Details</button>
-              </Link>
             </div>
           ))}
         </div>
