@@ -6,6 +6,7 @@ import Categories from './Categories';
 import MyRecipes from './MyRecipes';
 import Footer from './Footer';
 import './App.css'; 
+import RecipesDetails from './RecipesDetails';
 
 function App() {
   const [myRecipes, setMyRecipes] = useState([]);
@@ -29,6 +30,7 @@ function App() {
             path="/my-recipes"
             element={<MyRecipes myRecipes={myRecipes} removeRecipeFromMyRecipes={removeRecipeFromMyRecipes} />}
           />
+          <Route path="/recipe/:id" element={<RecipesDetails recipes={myRecipes} />} />
         </Routes>
         <Footer />
       </div>

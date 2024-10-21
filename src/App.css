@@ -71,3 +71,12 @@ footer {
   width: 100%;
   bottom: 0;
 }
+
+.btn-forward {
+  background-color: purple;
+}
+
+.card-btn {
+  display: flex;
+  gap: 4rem;
+}
