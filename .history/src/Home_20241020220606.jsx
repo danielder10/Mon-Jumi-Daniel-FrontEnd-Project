@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const recipes = [
+const recipes = [
   { 
     title: "Vegan Tacos", 
     img: "https://www.freshoffthegrid.com/wp-content/uploads/5-ingredient-vegan-taco-sq.jpg", 

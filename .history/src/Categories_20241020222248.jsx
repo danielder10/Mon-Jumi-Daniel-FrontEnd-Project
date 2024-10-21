@@ -7,7 +7,7 @@ function Categories() {
   const [ selectedCategory, setSelectedCategory ] = useState('All');
 
   const handleCategoryChange = (category) => {
-    setSelectedCategory(category)
+    selectedCategory(category)
   }
 
   const filterRecipe = selectedCategory === 'All' 

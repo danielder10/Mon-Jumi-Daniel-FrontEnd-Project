@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const recipes = [
+const recipes = [
   { 
     title: "Vegan Tacos", 
     img: "https://www.freshoffthegrid.com/wp-content/uploads/5-ingredient-vegan-taco-sq.jpg", 
@@ -22,14 +22,12 @@ export const recipes = [
   { 
     title: "Lemon Chicken", 
     img: "https://images.getrecipekit.com/20220904014419-crispy-20lemon-20chicken.png?aspect_ratio=16:9&quality=90&", 
-    description: "Tangy and savory lemon chicken...",
-    category: "Paleo"
+    description: "Tangy and savory lemon chicken..." 
   },
   { 
     title: "Chocolate Brownies", 
     img: "https://joyfoodsunshine.com/wp-content/uploads/2018/01/best-black-bean-brownies-recipe-4.jpg", 
-    description: "Rich and fudgy chocolate brownies...",
-    category: "Vegan"
+    description: "Rich and fudgy chocolate brownies..." 
   }
 ];
 
