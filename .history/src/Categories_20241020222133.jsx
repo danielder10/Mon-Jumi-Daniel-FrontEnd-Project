@@ -1,13 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 import './App.css'; 
-import { recipes } from './Home';
 
 function Categories() {
   const [ selectedCategory, setSelectedCategory ] = useState('All');
 
   const handleCategoryChange = (category) => {
-    setSelectedCategory(category)
+    selectedCategory(category)
   }
 
   const filterRecipe = selectedCategory === 'All' 
