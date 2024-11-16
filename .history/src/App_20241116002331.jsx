@@ -7,7 +7,6 @@ import MyRecipes from './MyRecipes';
 import Footer from './Footer';
 import './App.css'; 
 import RecipesDetails from './RecipesDetails';
-import AddNewRecipe from './AddNewRecipe';
 
 function App() {
   const [myRecipes, setMyRecipes] = useState([]);
@@ -32,7 +31,6 @@ function App() {
             element={<MyRecipes myRecipes={myRecipes} removeRecipeFromMyRecipes={removeRecipeFromMyRecipes} />}
           />
           <Route path="/recipe/:id" element={<RecipesDetails recipes={recipes} />} />
-          <Route path="/add-new-recipe" element={<AddNewRecipe />} />
         </Routes>
         <Footer />
       </div>

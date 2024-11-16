@@ -9,7 +9,6 @@ function Header() {
         <ul className="nav-list">
           <li className="nav-item"><Link to="/">Home</Link></li>
           <li className="nav-item"><Link to="/categories">Categories</Link></li>
-          <li className="nav-item"><Link to="/add-new-recipe">Create New</Link></li>
           <li className="nav-item"><Link to="/my-recipes">My Recipes</Link></li>
         </ul>
       </nav>

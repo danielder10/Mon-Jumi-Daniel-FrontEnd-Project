@@ -84,19 +84,5 @@ footer {
 /****** Add new recipe ******/
 .add-recipe-form {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.input-field {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  gap: 1em;
-}
-
-.input-field input, textarea {
-  width: 500px;
-  height: 2em;
+  align-items: row;
 }

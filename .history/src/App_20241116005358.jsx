@@ -32,7 +32,7 @@ function App() {
             element={<MyRecipes myRecipes={myRecipes} removeRecipeFromMyRecipes={removeRecipeFromMyRecipes} />}
           />
           <Route path="/recipe/:id" element={<RecipesDetails recipes={recipes} />} />
-          <Route path="/add-new-recipe" element={<AddNewRecipe />} />
+          <Route path="/add-new-recippe" element={<AddNewRecipe />} />
         </Routes>
         <Footer />
       </div>
