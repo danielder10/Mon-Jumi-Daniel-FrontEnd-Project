@@ -97,6 +97,6 @@ footer {
 }
 
 .input-field input, textarea {
-  width: 500px;
+  width: 100px;
   height: 2em;
 }
