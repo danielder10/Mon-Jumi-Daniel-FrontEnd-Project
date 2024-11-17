@@ -126,6 +126,118 @@ export const recipes = [
       "2. Mix in sugar, eggs, and vanilla.",
       "3. Stir in dry ingredients.",
       "4. Pour into a greased pan and bake at 350°F for 20-25 minutes."]
+  },
+  { 
+    id: 5,
+    title: "Thai Green Curry", 
+    img: "https://piquantpost.com/cdn/shop/articles/GJ16a1y2HDD3gYjmojg2t_1200x1200.jpg?v=1646021297", 
+    description: "A creamy and spicy Thai dish...", 
+    category: "Gluten-Free",
+    ingredients: [
+      "2 tbsp green curry paste",
+      "1 can (400ml) coconut milk",
+      "1 lb chicken breast, sliced",
+      "1 cup green beans, trimmed",
+      "1 cup baby corn, sliced",
+      "1 red bell pepper, sliced",
+      "2 tbsp fish sauce",
+      "1 tsp brown sugar",
+      "Fresh basil leaves",
+      "Steamed rice for serving"
+    ],
+    instructions: [
+      "1. Heat a large skillet over medium heat and cook the green curry paste for 1 minute.",
+      "2. Stir in the coconut milk and bring to a gentle simmer.",
+      "3. Add the chicken slices and cook for 5 minutes.",
+      "4. Mix in the vegetables, fish sauce, and sugar, then simmer until vegetables are tender.",
+      "5. Garnish with basil leaves and serve with steamed rice."
+    ]
+  },
+  { 
+    id: 6,
+    title: "Avocado Toast", 
+    img: "https://media.istockphoto.com/id/1356424215/photo/avocado-toast-on-whole-grain-sandwich-bread.jpg?s=612x612&w=0&k=20&c=eWF_FPBTvLCyNitB2o3cSeQkMPBWnlEVnJ4kkiQ4c_k=", 
+    description: "Quick and healthy breakfast option...", 
+    category: "Vegan",
+    ingredients: [
+      "2 slices of whole-grain bread",
+      "1 ripe avocado",
+      "1/2 tsp lemon juice",
+      "Salt and pepper to taste",
+      "Optional toppings: cherry tomatoes, chili flakes, or sprouts"
+    ],
+    instructions: [
+      "1. Toast the bread slices until golden and crispy.",
+      "2. Mash the avocado with lemon juice, salt, and pepper.",
+      "3. Spread the avocado mixture evenly on each toast.",
+      "4. Add optional toppings for extra flavor and serve immediately."
+    ]
+  },
+  { 
+    id: 7,
+    title: "Grilled Salmon with Asparagus", 
+    img: "https://i0.wp.com/www.letscooksomefood.com/wp-content/uploads/2016/06/Grilled-Salmon-and-Asparagus-with-Aioli-Sauce1.jpg?fit=960%2C720&ssl=1", 
+    description: "A light and flavorful Paleo dish...", 
+    category: "Paleo",
+    ingredients: [
+      "4 salmon fillets",
+      "1 bunch asparagus, trimmed",
+      "2 tbsp olive oil",
+      "2 tbsp lemon juice",
+      "2 cloves garlic, minced",
+      "Salt and pepper to taste",
+      "Lemon wedges for garnish"
+    ],
+    instructions: [
+      "1. Preheat grill to medium heat.",
+      "2. Season salmon and asparagus with olive oil, garlic, lemon juice, salt, and pepper.",
+      "3. Grill the salmon for 4-5 minutes per side and asparagus until tender.",
+      "4. Serve hot with lemon wedges."
+    ]
+  },
+  { 
+    id: 8,
+    title: "Banana Smoothie", 
+    img: "https://abeautifulmess.com/wp-content/uploads/2023/04/banana-smoothie-recipe.jpg", 
+    description: "Refreshing and healthy smoothie...", 
+    category: "Keto",
+    ingredients: [
+      "1 ripe banana",
+      "1/2 cup unsweetened almond milk",
+      "1/4 cup Greek yogurt",
+      "1 tbsp peanut butter",
+      "1/2 tsp vanilla extract",
+      "Ice cubes (optional)"
+    ],
+    instructions: [
+      "1. Add all ingredients to a blender.",
+      "2. Blend until smooth and creamy.",
+      "3. Pour into a glass and enjoy immediately."
+    ]
+  },
+  { 
+    id: 9,
+    title: "Shepherd's Pie", 
+    img: "https://www.simplyrecipes.com/thmb/esY4hhLlEgWMG0q9kOvbDZ24Px0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Easy-Shepherds-Pie-Lead-2_SERP-fdf8883477354e85bd05f9243f71657f.jpg", 
+    description: "A hearty and comforting dish...", 
+    category: "Gluten-Free",
+    ingredients: [
+      "1 lb ground lamb or beef",
+      "1 onion, diced",
+      "2 carrots, diced",
+      "2 tbsp tomato paste",
+      "1 cup beef broth",
+      "2 cups mashed potatoes",
+      "Salt and pepper to taste",
+      "Fresh parsley for garnish"
+    ],
+    instructions: [
+      "1. Preheat the oven to 375°F (190°C).",
+      "2. Cook ground meat with onions and carrots in a skillet.",
+      "3. Stir in tomato paste and broth, then simmer until thickened.",
+      "4. Transfer to a baking dish, top with mashed potatoes, and bake for 20 minutes.",
+      "5. Garnish with parsley and serve hot."
+    ]
   }
 ];
 
