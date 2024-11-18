@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 function RecipeDetails({ recipes }) {
   const { id } = useParams();
-  const recipe = recipes[parseInt(id)];  // Correct the ID to array index
+  const recipe = recipes.find((recipe) => recipe.id === parseInt(id));  // Correct the ID to array index
 
   if (!recipe) {
     return <div>Recipe not found.</div>;

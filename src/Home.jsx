@@ -242,6 +242,7 @@ export const recipes = [
 ];
 
 function Home({ addRecipeToMyRecipes }) {
+  
   return (
     <div className="home">
       <h2>Featured Recipes</h2>
@@ -249,7 +250,7 @@ function Home({ addRecipeToMyRecipes }) {
         {recipes.map((recipe, index) => (
           <div key={index} className="recipe-item">
             <img 
-              src={recipe.img} 
+              src={recipe.img instanceof File ? URL.createObjectURL(recipe.img) : recipe.img} 
               alt={recipe.title} 
               style={{ width: '300px', height: '200px' }}
             />
