@@ -29,7 +29,7 @@ function Categories() {
       <div className="recipe-list">
         {filterRecipe.map((recipe, index) => (
           <div key={index} className="recipe-item">
-            <img src={recipe.img} alt={recipe.title} style={{ width: '300px', height: '200px' }} />
+            <img src={recipe.img instanceof File ? URL.createObjectURL(recipe.img) : recipe.img} alt={recipe.title} style={{ width: '300px', height: '200px' }} />
             <h3>{recipe.title}</h3>
             <p>{recipe.description}</p>
           </div>

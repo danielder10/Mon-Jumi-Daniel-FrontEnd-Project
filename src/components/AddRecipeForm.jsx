@@ -10,18 +10,34 @@ function AddRecipeForm({ onAddRecipe }) {
     img: null,
   });
 
+  const [preview, setPreview] = useState(null); // For previewing the image
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleImageChange = (e) => {
-    setFormData({ ...formData, img: e.target.files[0] });
+    const file = e.target.files[0];
+    if (file) {
+      setFormData({ ...formData, img: file });
+      setPreview(URL.createObjectURL(file)); // Generate a preview URL
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddRecipe(formData);
+
+    // Ensure `img` is processed correctly before passing it to `onAddRecipe`
+    const newRecipe = {
+      ...formData,
+      ingredients: formData.ingredients.split(',').map((i) => i.trim()), // Parse ingredients
+      instruction: formData.instruction.split('.').map((step) => step.trim()), // Parse instructions
+    };
+
+    onAddRecipe(newRecipe);
+
+    // Cleanup after submission
     setFormData({
       title: '',
       description: '',
@@ -29,6 +45,7 @@ function AddRecipeForm({ onAddRecipe }) {
       instruction: '',
       img: null,
     });
+    setPreview(null); // Clear preview
   };
 
   return (
@@ -61,7 +78,7 @@ function AddRecipeForm({ onAddRecipe }) {
       </div>
 
       <div className="form-group">
-        <label htmlFor="ingredients">Ingredients:</label>
+        <label htmlFor="ingredients">Ingredients (comma-separated):</label>
         <textarea
           id="ingredients"
           name="ingredients"
@@ -73,7 +90,7 @@ function AddRecipeForm({ onAddRecipe }) {
       </div>
 
       <div className="form-group">
-        <label htmlFor="instruction">Instructions:</label>
+        <label htmlFor="instruction">Instructions (step-separated by periods):</label>
         <textarea
           id="instruction"
           name="instruction"
@@ -86,7 +103,12 @@ function AddRecipeForm({ onAddRecipe }) {
 
       <div className="form-group">
         <label htmlFor="img">Upload Image:</label>
-        <input type="file" id="img" onChange={handleImageChange} required />
+        <input type="file" id="img" accept="image/*" onChange={handleImageChange} required />
+        {preview && (
+          <div className="image-preview">
+            <img src={preview} alt="Preview" style={{ width: '300px', height: '200px', marginTop: '10px' }} />
+          </div>
+        )}
       </div>
 
       <button type="submit" className="submit-button">Add Recipe</button>

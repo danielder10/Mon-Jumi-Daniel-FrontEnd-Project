@@ -6,15 +6,17 @@ import Categories from './Categories';
 import MyRecipes from './MyRecipes';
 import Footer from './Footer';
 import RecipesDetails from './RecipesDetails';
+import { recipes as defaultRecipes } from './Home';
 import AddNewRecipe from './AddNewRecipe';
 import './App.css';
 
 function App() {
-  const [recipes, setRecipes] = useState([]); // Shared state for all recipes
+  const [recipes, setRecipes] = useState(defaultRecipes); // Shared state for all recipes
   const [myRecipes, setMyRecipes] = useState([]); // State for "My Recipes"
 
   const handleAddRecipe = (newRecipe) => {
-    setRecipes((prevRecipes) => [...prevRecipes, newRecipe]);
+    // Add the new recipe to the `recipes` array
+    setRecipes((prevRecipes) => [...prevRecipes, { ...newRecipe, id: prevRecipes.length }]);
   };
 
   const addRecipeToMyRecipes = (recipe) => {
@@ -30,11 +32,14 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
+
           <Route
             path="/"
-            element={<Home addRecipeToMyRecipes={addRecipeToMyRecipes} />}
+            element={<Home recipes={recipes} addRecipeToMyRecipes={addRecipeToMyRecipes} />}
           />
-          <Route path="/categories" element={<Categories />} />
+
+          <Route path="/categories" element={<Categories recipes={recipes} />} />
+
           <Route
             path="/my-recipes"
             element={
@@ -47,7 +52,11 @@ function App() {
           <Route
             path="/add-new-recipe"
             element={
-              <AddNewRecipe recipes={recipes} handleAddRecipe={handleAddRecipe} />
+              <AddNewRecipe
+                recipes={recipes}
+                handleAddRecipe={handleAddRecipe}
+                addRecipeToMyRecipes={addRecipeToMyRecipes}
+              />
             }
           />
           <Route path="/recipe/:id" element={<RecipesDetails recipes={recipes} />} />
