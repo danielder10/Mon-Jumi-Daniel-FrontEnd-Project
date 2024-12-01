@@ -38,8 +38,16 @@ function App() {
             element={<Home recipes={recipes} addRecipeToMyRecipes={addRecipeToMyRecipes} />}
           />
 
-          <Route path="/categories" element={<Categories recipes={recipes} />} />
-
+          <Route
+            path="/categories"
+            element={
+              <Categories
+                recipes={recipes}
+                addRecipeToMyRecipes={addRecipeToMyRecipes}
+              />
+            }
+          />
+          
           <Route
             path="/my-recipes"
             element={

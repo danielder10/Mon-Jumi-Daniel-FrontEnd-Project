@@ -2,13 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import './App.css'; 
 import { recipes } from './Home';
+import { Link } from 'react-router-dom';
 
-function Categories() {
-  const [ selectedCategory, setSelectedCategory ] = useState('All');
+function Categories({ addRecipeToMyRecipes }) {
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const handleCategoryChange = (category) => {
-    setSelectedCategory(category)
-  }
+    setSelectedCategory(category);
+  };
 
   const filterRecipe = selectedCategory === 'All' 
     ? recipes 
@@ -31,6 +32,12 @@ function Categories() {
           <div key={index} className="recipe-item">
             <img src={recipe.img instanceof File ? URL.createObjectURL(recipe.img) : recipe.img} alt={recipe.title} style={{ width: '300px', height: '200px' }} />
             <h3>{recipe.title}</h3>
+            <div className="card-btn">
+              <button onClick={() => addRecipeToMyRecipes(recipe)}>Add to My Recipes</button>
+              <Link to={`/recipe/${recipe.id}`}>
+                <button className="btn-forward">&#10140;</button>
+              </Link>
+            </div>
             <p>{recipe.description}</p>
           </div>
         ))}
