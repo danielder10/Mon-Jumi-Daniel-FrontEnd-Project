@@ -6,6 +6,7 @@ export default function AddNewRecipe({ recipes, handleAddRecipe, addRecipeToMyRe
   // Filter to show only user-added recipes
   const userAddedRecipes = recipes.filter((recipe) => recipe.isUserAdded);
 
+
   return (
     <div>
       <AddRecipeForm onAddRecipe={(recipe) => handleAddRecipe({ ...recipe, isUserAdded: true })} />

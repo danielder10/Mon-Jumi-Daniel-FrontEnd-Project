@@ -15,8 +15,11 @@ function App() {
   const [myRecipes, setMyRecipes] = useState([]); // State for "My Recipes"
 
   const handleAddRecipe = (newRecipe) => {
-    // Add the new recipe to the `recipes` array
-    setRecipes((prevRecipes) => [...prevRecipes, { ...newRecipe, id: prevRecipes.length }]);
+    setRecipes((prevRecipes) =>
+      prevRecipes.some((recipe) => recipe.id === newRecipe.id)
+        ? prevRecipes
+        : [...prevRecipes, { ...newRecipe, id: prevRecipes.length }]
+    );
   };
 
   const addRecipeToMyRecipes = (recipe) => {
@@ -47,7 +50,7 @@ function App() {
               />
             }
           />
-          
+
           <Route
             path="/my-recipes"
             element={
