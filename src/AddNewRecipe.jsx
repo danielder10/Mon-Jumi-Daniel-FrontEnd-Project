@@ -3,7 +3,6 @@ import AddRecipeForm from './components/AddRecipeForm';
 import './App.css';
 
 export default function AddNewRecipe({ recipes, handleAddRecipe, addRecipeToMyRecipes }) {
-  // Filter to show only user-added recipes
   const userAddedRecipes = recipes.filter((recipe) => recipe.isUserAdded);
 
   return (

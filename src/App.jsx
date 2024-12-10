@@ -11,16 +11,20 @@ import AddNewRecipe from './AddNewRecipe';
 import './App.css';
 
 function App() {
-  const [recipes, setRecipes] = useState(defaultRecipes); // Shared state for all recipes
-  const [myRecipes, setMyRecipes] = useState([]); // State for "My Recipes"
+  const [recipes, setRecipes] = useState(defaultRecipes); 
+  const [myRecipes, setMyRecipes] = useState([]); 
 
   const handleAddRecipe = (newRecipe) => {
-    // Add the new recipe to the `recipes` array
     setRecipes((prevRecipes) => [...prevRecipes, { ...newRecipe, id: prevRecipes.length }]);
   };
 
   const addRecipeToMyRecipes = (recipe) => {
-    setMyRecipes((prevRecipes) => [...prevRecipes, recipe]);
+    setMyRecipes((prevRecipes) => {
+      if (!prevRecipes.find((r) => r.id === recipe.id)) {
+        return [...prevRecipes, recipe];
+      }
+      return prevRecipes;
+    });
   };
 
   const removeRecipeFromMyRecipes = (index) => {
@@ -32,14 +36,11 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-
           <Route
             path="/"
             element={<Home recipes={recipes} addRecipeToMyRecipes={addRecipeToMyRecipes} />}
           />
-
-          <Route path="/categories" element={<Categories recipes={recipes} />} />
-
+          <Route path="/categories" element={<Categories recipes={recipes} addRecipeToMyRecipes={addRecipeToMyRecipes} />} />
           <Route
             path="/my-recipes"
             element={

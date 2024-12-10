@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import RecipesDetails from './RecipesDetails';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './App.css';
 
 
 export const recipes = [
@@ -241,19 +241,14 @@ export const recipes = [
   }
 ];
 
-function Home({ addRecipeToMyRecipes }) {
-  
+function Home({ recipes, addRecipeToMyRecipes }) {
   return (
     <div className="home">
       <h2>Featured Recipes</h2>
       <div className="recipe-list">
         {recipes.map((recipe, index) => (
           <div key={index} className="recipe-item">
-            <img 
-              src={recipe.img instanceof File ? URL.createObjectURL(recipe.img) : recipe.img} 
-              alt={recipe.title} 
-              style={{ width: '300px', height: '200px' }}
-            />
+            <img src={recipe.img} alt={recipe.title} style={{ width: '300px', height: '200px' }} />
             <h3>{recipe.title}</h3>
             <div className="card-btn">
               <button onClick={() => addRecipeToMyRecipes(recipe)}>Add to My Recipes</button>
